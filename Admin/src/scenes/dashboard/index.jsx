@@ -13,7 +13,9 @@ import StatBox from "../../components/StatBox";
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
+  const users = 120;
+  const Clubs = 120;
+  const Activitys = 120;
   return (
     <Box m="20px">
       {/* HEADER */}
@@ -52,7 +54,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="12,361"
+            title={users}
             subtitle="Tunimateurs"
             progress="0.75"
             increase="+14%"
@@ -71,7 +73,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="12,361"
+            title={Clubs}
             subtitle="Clubs"
             progress="0.75"
             increase="+14%"
@@ -90,7 +92,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="431,225"
+            title={Activitys}
             subtitle="Projects"
             progress="0.50"
             increase="+21%"
@@ -111,8 +113,6 @@ const Dashboard = () => {
           <StatBox
             title="12,361"
             subtitle="colaborations"
-            progress="0.75"
-            increase="+14%"
             icon={
               <HandymanIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
@@ -198,10 +198,7 @@ const Dashboard = () => {
                   {transaction.user}
                 </Typography>
               </Box>
-              <Box
-                p="5px 10px"
-                borderRadius="4px"
-              >
+              <Box p="5px 10px" borderRadius="4px">
                 <Typography color={colors.grey[100]}>
                   {transaction.txId}
                 </Typography>

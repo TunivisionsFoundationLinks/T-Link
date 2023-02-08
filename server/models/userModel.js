@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const UserSchema = mongoose.Schema(
   {
-    username: {
+    email: {
       type: String,
       required: true,
     },
@@ -18,28 +18,24 @@ const UserSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
+  
+    isAdmin: { type: Boolean, default: false },
+    isBureau: { type: Boolean, default: false },
+    role: {
+      type: String,
+      required: true,
     },
-    isClub: {
-      type: Boolean,
-      default: false,
+
+    Chapter: {
+      type: String,
+      required: true,
     },
-    isProject: {
-      type: Boolean,
-      default: false,
-    },
-    isBureauNation: {
-      type: Boolean,
-      default: false,
+    points: {
+      type: Number,
+      default: 0,
     },
     profilePicture: String,
     coverPicture: String,
-    about: String,
-    livesIn: String,
-    worksAt: String,
-    country: String,
     followers: [],
     following: [],
   },

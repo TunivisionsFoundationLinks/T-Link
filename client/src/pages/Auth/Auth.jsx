@@ -22,7 +22,6 @@ const Auth = () => {
 
   const [confirmPass, setConfirmPass] = useState(true);
 
-  // const dispatch = useDispatch()
 
   // Reset Form
   const resetForm = () => {

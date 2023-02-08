@@ -1,4 +1,13 @@
-import { Box, Button, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  TextField,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  ListSubheader,
+} from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -6,7 +15,13 @@ import Header from "../../components/Header";
 
 const FormAdmin = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
-
+  const initialState = {
+    firstname: "",
+    lastname: "",
+    username: "",
+    password: "",
+    confirmpass: "",
+  };
   const handleFormSubmit = (values) => {
     console.log(values);
   };
@@ -54,13 +69,13 @@ const FormAdmin = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Role"
+                label="lastname"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.role}
-                name="Role"
-                error={!!touched.role && !!errors.role}
-                helperText={touched.role && errors.role}
+                name="lastname"
+                error={!!touched.lastname && !!errors.lastname}
+                helperText={touched.lastname && errors.lastname}
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -76,19 +91,58 @@ const FormAdmin = () => {
                 helperText={touched.email && errors.email}
                 sx={{ gridColumn: "span 4" }}
               />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Contact Number"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.contact}
-                name="contact"
-                error={!!touched.contact && !!errors.contact}
-                helperText={touched.contact && errors.contact}
-                sx={{ gridColumn: "span 4" }}
-              />
+              <FormControl>
+                <InputLabel id="demo-select-small">Chapter</InputLabel>
+                <Select
+                  labelId="demo-select-small"
+                  id="demo-select-small"
+                  value={values.Chapter}
+                  label="Chapter"
+                  name="Chapter"
+                  onChange={handleChange}
+                >
+                  <MenuItem value={"Alumni"}>Alumni</MenuItem>
+                  <MenuItem value={"University"}>University</MenuItem>
+                  <MenuItem value={"High-School"}>High-School</MenuItem>
+                  <MenuItem value={"Teens"}>Teens</MenuItem>
+                  <MenuItem value={"Kids"}>Kids</MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl>
+                <InputLabel id="demo-select-small">Role</InputLabel>
+                <Select
+                  labelId="demo-select-small"
+                  id="demo-select-small"
+                  value={values.role}
+                  label="role"
+                  name="role"
+                  onChange={handleChange}
+                >
+                  <MenuItem value={"Coordinateur"}>
+                    Coordinateur/Coordinatrice
+                  </MenuItem>
+                  <ListSubheader label="Manangers">
+                    <MenuItem value={"Manager Ressources humaines"}>
+                      Manager Ressources humaines
+                    </MenuItem>
+                    <MenuItem value={"Manager Marketing Communication"}>
+                      Manager Marketing Communication
+                    </MenuItem>
+                    <MenuItem value={"Manager événementielle"}>
+                      Manager événementielle
+                    </MenuItem>
+                    <MenuItem value={"Manager Business Development"}>
+                      Manager Business Development
+                    </MenuItem>
+                    <MenuItem value={"Manager Digital"}>Manager Digital</MenuItem>
+                    <MenuItem value={"Manager Process"}>Manager Process</MenuItem>
+                  </ListSubheader>
+                  <ListSubheader label="Consultants">
+                    <MenuItem value={"Consultant"}>Consultant</MenuItem>
+                  </ListSubheader>
+                  <MenuItem value={"attache"}>attache</MenuItem>
+                </Select>
+              </FormControl>
               <TextField
                 fullWidth
                 variant="filled"
@@ -96,10 +150,10 @@ const FormAdmin = () => {
                 label="Address"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address1}
+                value={values.role}
                 name="address"
-                error={!!touched.address && !!errors.address}
-                helperText={touched.address && errors.address}
+                error={!!touched.role && !!errors.role}
+                helperText={touched.role && errors.role}
                 sx={{ gridColumn: "span 4" }}
               />
               <TextField
@@ -128,31 +182,24 @@ const FormAdmin = () => {
   );
 };
 
-const phoneRegExp =
-  /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
-
 const checkoutSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
   email: yup.string().email("invalid email").required("required"),
-  isAdmin: true,
-  contact: yup
-    .string()
-    .matches(phoneRegExp, "Phone number is not valid")
-    .required("required"),
-  address1: yup.string().required("required"),
-  about: yup.string().required("required"),
+  isAdmin: false,
+  Chapter: yup.string().required("required"),
+  role: yup.string().required("required"),
+  // about: yup.string().required("required"),
 });
 const initialValues = {
   firstName: "",
   lastName: "",
   email: "",
-  isAdmin: true,
-  contact: "",
-  address1: "",
+  isAdmin: false,
   Chapter: "",
-  isBureauNation: "",
-  worksAt:"",
+  role: "",
+  isBureau: true,
+  worksAt: "",
 };
 
 export default FormAdmin;

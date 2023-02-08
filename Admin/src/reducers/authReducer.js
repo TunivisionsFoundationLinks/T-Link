@@ -67,6 +67,13 @@ const authReducer = (
       return { ...state, authData: action.data, loading: false, error: false };
     case "AUTH_ADMIN_FAIL":
       return { ...state, loading: false, error: true };
+    case "CREATE_NEW_BN_BEGIN":
+      return { ...state, loading: true, error: false };
+    case "CREATE_NEW_BN_SUCCESS":
+       localStorage.setItem("profile", JSON.stringify({ ...action?.data }));
+      return { ...state, loading: false, error: false };
+    case "CREATION_FAILED":
+      return { ...state, loading: false, error: true };
     default:
       return state;
   }

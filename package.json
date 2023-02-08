@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "backend": "nodemon server/index.js",
+    "socket": "nodemon socket/index.js",
+    "start": "concurrently \"npm run backend\" \"npm run socket\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/TunivisionsFoundationLinks/T-Link/issues"
   },
-  "homepage": "https://github.com/TunivisionsFoundationLinks/T-Link#readme"
+  "homepage": "https://github.com/TunivisionsFoundationLinks/T-Link#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
 }

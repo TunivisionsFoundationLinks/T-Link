@@ -13,17 +13,19 @@ const Login = () => {
 
   const [data, setData] = useState(initialValues);
 
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
+    setData({
+      email: e.target.email.value,
+      password: e.target.password.value,
+    });
     dispatch(logIn(data, navigate));
   };
   return (
     <Box display="grid" m="auto">
       <Formik
-        onSubmit={handleFormSubmit}
         initialValues={initialValues}
+        onSubmit={handleFormSubmit}
         validationSchema={checkoutSchema}
       >
         {({
@@ -78,7 +80,7 @@ const Login = () => {
                 fullWidth
                 variant="contained"
               >
-                {loading ? "Loading..." :  "Login"}
+                {loading ? "Loading..." : "Login"}
               </Button>
             </Box>
           </form>
@@ -90,7 +92,7 @@ const Login = () => {
 
 const checkoutSchema = yup.object().shape({
   email: yup.string().email("invalid email").required("required"),
-  password: yup.string().password("invalid password").required("required"),
+  password: yup.string().required("required"),
 });
 const initialValues = {
   email: "",

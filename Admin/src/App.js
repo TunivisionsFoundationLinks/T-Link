@@ -24,25 +24,25 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          {/* {user ? ( */}
-          <>
-            <Sidebar isSidebar={isSidebar} />
-            <main className="content">
-              <Topbar setIsSidebar={setIsSidebar} />
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/team" element={<Team />} />
-                <Route path="/contacts" element={<Contacts />} />
-                <Route path="/invoices" element={<Invoices />} />
-                <Route path="/form" element={<Form />} />
-                <Route path="/formAdmin" element={<FormAdmin />} />
-                <Route path="/calendar" element={<Calendar />} />
-              </Routes>
-            </main>
-          </>
-          {/* ) : (
+          {user ? (
+            <>
+              <Sidebar isSidebar={isSidebar} />
+              <main className="content">
+                <Topbar setIsSidebar={setIsSidebar} />
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/team" element={<Team />} />
+                  <Route path="/contacts" element={<Contacts />} />
+                  <Route path="/invoices" element={<Invoices />} />
+                  <Route path="/form" element={<Form />} />
+                  <Route path="/formAdmin" element={<FormAdmin />} />
+                  <Route path="/calendar" element={<Calendar />} />
+                </Routes>
+              </main>
+            </>
+          ) : (
             <Login />
-          )} */}
+          )}
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
