@@ -5,7 +5,9 @@
   position: relative;
   gap: 1rem;
   overflow-x: clip;
+  height: 600px;
   background-color: var(--cardColor);
+
 }
 
 /* Profile Images */
@@ -16,13 +18,20 @@
   align-items: center;
   justify-content: center;
 }
+.coverProfile{
+   width: 640px; 
+   height: 360px; 
+   background-size: cover; 
+}
+
 
 .ProfileImages > img:nth-of-type(1) {
   width: 100%;
 }
 .ProfileImages > img:nth-of-type(2) {
-  width: 6rem;
   border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
   position: absolute;
   bottom: -3rem;
   box-shadow: var(--profileShadow);
@@ -91,3 +100,4 @@
   margin-bottom: 1rem;
   cursor: pointer;
 }
+

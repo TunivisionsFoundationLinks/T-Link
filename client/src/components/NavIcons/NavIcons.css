@@ -1,0 +1,74 @@
+.navIcons {
+  margin-top: 1rem;
+  display: flex;
+  position: relative;
+  color: white;
+  width: 100%;
+}
+
+.home {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: white;
+}
+
+.setting {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: white;
+}
+
+.notification {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: white;
+}
+
+.chatIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: white;
+}
+
+.navIcons > img {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+.NavBar {
+  display: contents;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .navIcons {
+    display: grid;
+    position: relative;
+    align-items: center;
+  }
+  .NavBar {
+    display: flex;
+     justify-content: space-evenly;
+  }
+}
+
+/* responsive styles for screens larger than 768px */
+
+@media screen and (min-width: 768px) {
+  .navIcons {
+    display: flex;
+     justify-content: space-between; 
+    align-items: center;
+  }
+  .NavBar {
+    display: contents;
+    justify-content: space-evenly;
+  }
+
+  .home:hover,
+  .setting:hover,
+  .notification:hover,
+  .chatIcon:hover {
+    color: var(--tunivisions);
+    cursor: pointer;
+  }
+}

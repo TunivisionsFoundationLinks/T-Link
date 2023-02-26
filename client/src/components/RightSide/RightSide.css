@@ -1,74 +1,62 @@
+/* default styles */
+
 .RightSide {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.navIcons {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-  color: white;
-}
-
-.navIcons > a > .home {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: white;
-}
-
-.navIcons > a > .setting {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: white;
-}
-.navIcons > a > .home :hover {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: var(--tunivisions);
-  cursor: pointer;
-}
-.navIcons > a > .notification {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: white;
-}
-.navIcons > a > .notification :hover {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: var(--tunivisions);
-  cursor: pointer;
-}
-.navIcons > a > .chatIcon {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: white;
-}
-.navIcons > a > .chatIcon :hover {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: var(--tunivisions);
-  cursor: pointer;
-}
-.navIcons > a > .setting :hover {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: var(--tunivisions);
-  cursor: pointer;
-}
-
-.navIcons > img {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: white;
-}
-
-.navIcons > .home:hover {
-  cursor: pointer;
-}
-
 .r-button {
   height: 3rem;
   width: 80%;
   align-self: center;
+}
+
+/* responsive styles for screens smaller than 768px */
+
+@media screen and (max-width: 767px) {
+  .RightSide {
+ display: none;
+  }
+  .r-button {
+    display: none;
+    width: 100%;
+  }
+}
+
+/* responsive styles for screens larger than 768px */
+
+@media screen and (min-width: 768px) {
+  .RightSide {
+    display: grid;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+
+  .r-button {
+    display: none;
+
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .RightSide {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 2%;
+    gap: 2rem;
+  }
+  
+  .r-button {
+    display: block;
+    height: 3rem;
+    width: 80%;
+    align-self: center;
+  }
+  
+  
 }

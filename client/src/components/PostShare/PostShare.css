@@ -4,14 +4,10 @@
     background-color: var(--cardColor);
     padding: 1rem;
     border-radius: 1rem;
+    justify-content: center;
 }
 
 
-.PostShare>img{
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-}
 .PostShare>div{
     display: flex;
     flex-direction: column;
@@ -27,9 +23,6 @@
     border: none;
     outline: none;
 }
-
-
-
 
 
 .postOptions{
@@ -61,7 +54,7 @@
 
 .previewImage{
     position: relative;
-    /* display: flex; */
+
 }
 
 .previewImage>svg{
@@ -77,3 +70,82 @@
     object-fit: cover;
     border-radius: 0.5rem;
 }
+
+
+@media screen and (max-width: 767px) {
+    .PostShare{
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        background-color: var(--cardColor);
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    
+    
+    .PostShare>.image_profile>img{
+        border-radius: 50%;
+        width: 3.25rem;
+        height: 2.75rem;
+        vertical-align: middle;
+    }
+    .PostShare>div{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        gap: 1rem;
+    }
+    
+    .PostShare>div>input{
+        background-color: var(--inputColor);
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 17px;
+        border: none;
+        outline: none;
+    }
+    p {
+        display: none;
+    }
+    .ps-button{
+        padding: 5px;
+       
+        font-size: 12px;
+        border-radius: 50%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .PostShare{
+     justify-content: center;
+        gap: 1rem;
+        background-color: var(--cardColor);
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    
+    p {
+        display: block;
+    }
+    .PostShare>img{
+        border-radius: 50%;
+        width: 3.25rem;
+        height: 2.75rem;
+        vertical-align: middle;
+    }
+    .PostShare>div{
+        display: flex;
+        justify-content: flex-start;
+        width: 90%;
+        gap: 1rem;
+    }
+    
+    .PostShare>div>input{
+        background-color: var(--inputColor);
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 17px;
+        border: none;
+        outline: none;
+    }
+}
+

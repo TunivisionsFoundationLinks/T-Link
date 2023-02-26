@@ -42,3 +42,41 @@ p > div > .jobs {
   align-items: flex-start;
   gap: 1.5rem;
 }
+
+
+@media screen and (max-width: 767px) {
+  .Post {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--cardColor);
+    border-radius: 1rem;
+    gap: 1rem;
+  }
+  .profile_img {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+  }
+  p {
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) {
+  .Post {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--cardColor);
+    border-radius: 1rem;
+    gap: 1rem;
+  }
+  .profile_img {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+  }
+  p {
+    display: flex;
+  }
+}

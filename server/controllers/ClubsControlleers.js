@@ -1,0 +1,1 @@
+import Club from "../models/clubsModel.js"

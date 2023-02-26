@@ -17,12 +17,11 @@ const Post = ({ data }) => {
     setLiked((prev) => !prev);
     liked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1);
   };
-  
+
   return (
     <div className="Post">
       <div className="detail">
         <p>
-
           <img
             className="profile_img"
             src={process.env.REACT_APP_PUBLIC_FOLDER + user.profilePicture}
