@@ -1,7 +1,38 @@
 .Home {
   position: relative;
   display: grid;
-  grid-template-columns: 18rem auto 20rem;
+  grid-template-columns: 23rem 36rem 23px;
+  justify-content: center;
   gap: 1rem;
 }
 
+@media screen and (max-width: 767px) {
+  .Home {
+    position: relative;
+    display: block;
+
+    justify-content: space-between;
+    /* grid-template-columns: 18rem 26rem 20rem; */
+    gap: 3rem;
+  }
+}
+
+/* responsive styles for screens larger than 768px */
+
+@media screen and (min-width: 768px) {
+  .Home {
+    position: relative;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 18rem 32rem 20rem;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 1024) {
+  .Home {
+    position: relative;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 25rem 36rem 25px;
+  }
+}

@@ -2,11 +2,11 @@ import React, { useState, useRef } from "react";
 import "./PostShare.css";
 import { UilScenery } from "@iconscout/react-unicons";
 import { UilPlayCircle } from "@iconscout/react-unicons";
-import { UilLocationPoint } from "@iconscout/react-unicons";
 import { UilSchedule } from "@iconscout/react-unicons";
 import { UilTimes } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadImage, uploadPost } from "../../actions/UploadAction";
+import { UilMessage } from "@iconscout/react-unicons";
 
 const PostShare = () => {
   const dispatch = useDispatch();
@@ -61,14 +61,7 @@ const PostShare = () => {
   };
   return (
     <div className="PostShare">
-      <img
-        src={
-          user.profilePicture
-            ? serverPublic + user.profilePicture
-            : serverPublic + "defaultProfile.png"
-        }
-        alt="Profile"
-      />
+  
       <div>
         <input
           type="text"
@@ -76,6 +69,7 @@ const PostShare = () => {
           required
           ref={desc}
         />
+
         <div className="postOptions">
           <div
             className="option"
@@ -83,27 +77,25 @@ const PostShare = () => {
             onClick={() => imageRef.current.click()}
           >
             <UilScenery />
-            Photo
+            <p>Photo</p>
           </div>
 
           <div className="option" style={{ color: "var(--video)" }}>
             <UilPlayCircle />
-            Video
+            <p>Video</p>
           </div>
-          <div className="option" style={{ color: "var(--location)" }}>
-            <UilLocationPoint />
-            Location
-          </div>
+
           <div className="option" style={{ color: "var(--shedule)" }}>
             <UilSchedule />
-            Shedule
+            <p>Shedule</p>
           </div>
           <button
             className="button ps-button"
             onClick={handleUpload}
             disabled={loading}
           >
-            {loading ? "uploading" : "Share"}
+            <UilMessage />
+            <p>{loading ? "uploading" : "Share"}</p>
           </button>
 
           <div style={{ display: "none" }}>

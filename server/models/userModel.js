@@ -21,6 +21,7 @@ const UserSchema = mongoose.Schema(
   
     isAdmin: { type: Boolean, default: false },
     isBureau: { type: Boolean, default: false },
+    isClub: { type: Boolean, default: false },
     role: {
       type: String,
       required: true,

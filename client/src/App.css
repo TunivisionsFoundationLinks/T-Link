@@ -98,3 +98,32 @@
   height: 2rem;
   align-self: flex-end;
 }
+
+/* Media Queries for Responsive Design */
+
+@media only screen and (max-width: 768px) {
+  /* App */
+  .App {
+    padding: 0.5rem 0.5rem;
+  }
+
+  /* Info Form */
+  .infoForm {
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Info Form */
+  .infoForm {
+    gap: 0.5rem;
+  }
+
+  .infoInput {
+    padding: 10px;
+  }
+  
+  .infoSelect {
+    padding: 10px;
+  }
+}

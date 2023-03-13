@@ -82,7 +82,7 @@ export const loginUser = async (req, res) => {
           process.env.JWTKEY,
           { expiresIn: "1h" }
         );
-        res.status(200).json({ user, token });
+        res.status(200).send({ user, token });
       }
     } else {
       res.status(404).json("User not found");
@@ -109,13 +109,13 @@ export const loginUserAdmin = async (req, res) => {
             process.env.JWTKEY,
             { expiresIn: "1h" }
           );
-          res.status(200).json({ user, token });
+          res.status(200).send({ user, token });
         }
       } else {
-        res.status(404).json("User not found 1");
+        res.status(404).json("password not correct");
       }
     } else {
-      res.status(404).json("User not found 2");
+      res.status(404).json("you don't have access to this page");
     }
   } catch (err) {
     res.status(500).json(err);

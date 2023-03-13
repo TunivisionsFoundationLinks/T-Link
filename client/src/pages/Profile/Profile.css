@@ -1,13 +1,67 @@
-.Profile{
-    position: relative;
-    display: grid;
-    grid-template-columns: 18rem auto 20rem;
-    gap: 1rem;
+.Profile {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  grid-template-columns: 18rem 36rem 20rem;
+  gap: 1rem;
 }
 
+.Profile-center {
+  display: grid;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-.Profile-center{
+.navBar {
+  display: contents;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .Profile {
+    position: relative;
     display: flex;
+    grid-template-columns: 18rem 36rem 20rem;
+    gap: 1rem;
+    flex-direction: column-reverse;
+  }
+
+  .Profile-center {
+    display: grid;
     flex-direction: column;
     gap: 1rem;
+  }
+}
+
+/* responsive styles for screens larger than 768px */
+
+@media screen and (min-width: 768px) {
+  .Profile {
+    position: relative;
+    display: grid;
+    grid-template-columns: 18rem 36rem 20rem;
+    gap: 1rem;
+  }
+
+  .Profile-center {
+    display: grid;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width : 1024px) {
+    .Profile {
+        position: relative;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 20rem 36rem 20rem;
+        gap: 1rem;
+      }
+    
+      .Profile-center {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+  
 }

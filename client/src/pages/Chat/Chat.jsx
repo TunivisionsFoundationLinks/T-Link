@@ -66,10 +66,12 @@ const Chat = () => {
   };
 
   return (
+    <>
+           <NavIcons />
     <div className="Chat">
       {/* Left Side */}
       <div className="Left-side-chat">
-        <LogoSearch />
+   
         <div className="Chat-container">
           <h2>Chats</h2>
           <div className="Chat-list">
@@ -94,7 +96,7 @@ const Chat = () => {
 
       <div className="Right-side-chat">
         <div style={{ width: "20rem", alignSelf: "flex-end" }}>
-          <NavIcons />
+   
         </div>
         <ChatBox
           chat={currentChat}
@@ -104,6 +106,7 @@ const Chat = () => {
         />
       </div>
     </div>
+    </>
   );
 };
 
