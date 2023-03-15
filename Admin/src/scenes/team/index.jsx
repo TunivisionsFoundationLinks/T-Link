@@ -6,7 +6,8 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
-
+import ModalComponents from "../../components/ModalComponents";
+import SelectComponents from "../../components/selectComponents.jsx";
 const Team = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -63,6 +64,18 @@ const Team = () => {
               {access}
             </Typography>
           </Box>
+        );
+      },
+    },
+    {
+      field: "updated Role",
+      headerName: "Controle",
+      flex: 1,
+      renderCell: () => {
+        return (
+          <ModalComponents>
+            <SelectComponents />{" "}
+          </ModalComponents>
         );
       },
     },

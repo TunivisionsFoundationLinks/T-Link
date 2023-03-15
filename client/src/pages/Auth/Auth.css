@@ -1,28 +1,34 @@
-.Auth {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  gap: 4rem;
+.Auth  {
   position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
-.Auth > div {
+ .Auth > div {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
+  justify-content: space-between;
+} 
 
 /* left side */
 .a-left {
-  gap: 2rem;
+  position: relative;
+  width: 50%;
+  height: 100%;
 }
 
-.a-left > img {
-  width: 4rem;
-  height: 4rem;
+.Auth .a-left  img {
+ position: absolute;
+ top: 0;
+ left: 0;
+ /* width: 100%;
+ height: 100%; */
 }
-
+.linksText{
+  display: flex;
+  justify-content: space-between;
+}
 .Webname > h1 {
   font-size: 3rem;
   background-color: red;
@@ -55,7 +61,111 @@
 }
 
 .authForm > div {
+  display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+
+}
+@media screen and (max-width: 767px) {
+  .Auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    flex-direction: column;
+    position: relative;
+  }
+  .authForm > div {
+    display: flex;
+
+    flex-direction: column;
+    margin: 20px;
+  }
+  .authForm {
+    background-color: var(--cardColor);
+    border-radius: 1rem;
+    padding: 1rem;
+    /* height: 80vh; */
+    display: grid;
+    align-content: space-evenly;
+    justify-items: center;
+  }
+  .Auth > div {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  .a-left {
+    gap: 0.25rem;
+  }
+
+  .a-left > img {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+/* responsive styles for screens larger than 768px */
+
+@media screen and (min-width: 768px) {
+  .Auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    position: relative;
+  }
+  .linksText{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+  }
+  .authForm {
+    display: flex; 
+   height: 100vw;
+   width: 100vh;
+  }
+  .Auth > div {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  .authForm {
+    background-color: var(--cardColor);
+    border-radius: 1rem;
+    padding: 1rem;
+
+  }
+  .a-left {
+    gap: 0.25rem;
+  }
+
+  .a-left > img {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+@media screen and (min-width: 1024) {
+  .Auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    position: relative;
+  }
+
+  .authForm {
+    background-color: var(--cardColor);
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  .Auth > div {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
 }

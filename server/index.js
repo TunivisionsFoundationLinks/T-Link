@@ -12,6 +12,10 @@ import UploadRoute from "./routes/UploadRoute.js";
 import ChatRoute from "./routes/ChatRoute.js";
 import MessageRoute from "./routes/MessageRoute.js";
 import InfoRoute from "./routes/InfoRouter.js";
+import RegionRoute from "./routes/StatesRoute.js";
+import ChapterRoute from "./routes/ChapterRouter.js";
+
+
 
 const app = express();
 
@@ -41,3 +45,5 @@ app.use("/user", authMiddleWare, UserRoute);
 app.use("/posts", authMiddleWare, PostRoute);
 app.use("/chat", authMiddleWare, ChatRoute);
 app.use("/message", authMiddleWare, MessageRoute);
+app.use("/region",RegionRoute);
+app.use("/Chapters",ChapterRoute)
