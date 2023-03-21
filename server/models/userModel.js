@@ -18,18 +18,20 @@ const UserSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-  
     isAdmin: { type: Boolean, default: false },
     isBureau: { type: Boolean, default: false },
     isClub: { type: Boolean, default: false },
-    role: {
-      type: String,
-      required: true,
-    },
-
     Chapter: {
       type: String,
       required: true,
+    },
+    region:{
+      type: String,
+      required: true,
+    },
+    clubName: { type: String},
+    role: {
+      type: String,
     },
     points: {
       type: Number,

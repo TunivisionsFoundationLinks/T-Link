@@ -12,7 +12,7 @@ const ProfileCard = ({ location }) => {
     <div className="ProfileCard">
       <div className="ProfileImages">
         <img
-        className="coverProfile"
+          className="coverProfile"
           src={
             user.coverPicture
               ? serverPublic + user.coverPicture
@@ -49,7 +49,7 @@ const ProfileCard = ({ location }) => {
             <span>Following</span>
           </div>
           {/* for profilepage */}
-          {location === "profilePage" && (
+          {/* {location === "profilePage" && (
             <>
               <div className="vl"></div>
               <div className="follow">
@@ -59,9 +59,8 @@ const ProfileCard = ({ location }) => {
                 <span>Posts</span>
               </div>
             </>
-          )}
+          )} */}
         </div>
-
       </div>
 
       {location === "profilePage" ? (
@@ -76,7 +75,6 @@ const ProfileCard = ({ location }) => {
           </Link>
         </span>
       )}
-      
     </div>
   );
 };
