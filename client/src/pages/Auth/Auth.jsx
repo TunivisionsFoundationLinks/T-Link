@@ -115,7 +115,7 @@ const Auth = () => {
   const dispatch = useDispatch();
   const [isSignUp, setIsSignUp] = useState(false);
   const [isForgot, setForgot] = useState(false);
-
+  const [reset, setReset] = useState(false);
   const [data, setData] = useState(initialState);
 
   const [confirmPass, setConfirmPass] = useState(true);
@@ -161,7 +161,6 @@ const Auth = () => {
       <div className="a-right">
         <form className="infoForm authForm" onSubmit={handleSubmit}>
           <h3>
-            {" "}
             {isForgot ? "Reset your Password" : isSignUp ? "Register" : "Login"}
           </h3>
 
@@ -190,18 +189,32 @@ const Auth = () => {
             ) : (
               ""
             ))}
+          {reset ? (
+            <div className="form_input">
+              <input
+                required
+                type="password"
+                className="infoInput"
+                placeholder="Password"
+                name="password"
+                value={data.password}
+                onChange={handleChange}
+              />
+            </div>
+          ) : (
+            <div className="form_input">
+              <input
+                required
+                type="text"
+                placeholder="E-mail"
+                className="infoInput"
+                name="email"
+                value={data.email}
+                onChange={handleChange}
+              />
+            </div>
+          )}
 
-          <div className="form_input">
-            <input
-              required
-              type="text"
-              placeholder="E-mail"
-              className="infoInput"
-              name="email"
-              value={data.email}
-              onChange={handleChange}
-            />
-          </div>
           {!isForgot && (
             <div className="form_input">
               <input

@@ -14,7 +14,7 @@ import MessageRoute from "./routes/MessageRoute.js";
 import InfoRoute from "./routes/InfoRouter.js";
 import RegionRoute from "./routes/StatesRoute.js";
 import ChapterRoute from "./routes/ChapterRouter.js";
-
+import RoleRoute from "./routes/AdminRoleRoute.js";
 
 
 const app = express();
@@ -46,4 +46,5 @@ app.use("/posts", authMiddleWare, PostRoute);
 app.use("/chat", authMiddleWare, ChatRoute);
 app.use("/message", authMiddleWare, MessageRoute);
 app.use("/region",RegionRoute);
-app.use("/Chapters",ChapterRoute)
+app.use("/Chapters",authMiddleWare,ChapterRoute);
+app.use("/role", RoleRoute);

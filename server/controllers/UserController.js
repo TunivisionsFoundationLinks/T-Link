@@ -4,9 +4,8 @@ import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken'
 // Get a User
 export const getUser = async (req, res) => {
-  const id = req.params.id;
-
   try {
+    const id = req.params.id;
     const user = await UserModel.findById(id);
     if (user) {
       const { password, ...otherDetails } = user._doc;
@@ -61,7 +60,6 @@ export const updateUser = async (req, res) => {
       console.log({user, token})
       res.status(200).json({user, token});
     } catch (error) {
-      console.log("Error agya hy")
       res.status(500).json(error);
     }
   } else {
